@@ -5,9 +5,9 @@ function startAnimation() {
     document.getElementById('heart-btn').classList.add('hidden');
     document.getElementById('content').classList.remove('hidden');
     
-    typeWriter("headline", "Happy Valentines for the love of my life:", 50);
+    typeWriter("headline", "Happy Valentines my Cutie🌹", 50);
     setTimeout(() => {
-        typeWriter("footer-msg", "My heart chose you, and it still does 💖. Love You Baba!!!! ", 50);
+        typeWriter("footer-msg", "My heart chose you, and it still does💖. Love You Baba!!!", 50);
     }, 3000);
 
     updateTimer();
@@ -110,3 +110,4 @@ document.addEventListener('click', function() {
     var audio = document.getElementById("valentineMusic");
     audio.play();
 }, { once: true }); // The 'once: true' ensures it doesn't restart every time they click
+
