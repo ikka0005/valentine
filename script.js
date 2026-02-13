@@ -5,9 +5,9 @@ function startAnimation() {
     document.getElementById('heart-btn').classList.add('hidden');
     document.getElementById('content').classList.remove('hidden');
     
-    typeWriter("headline", "For the love of my life:", 50);
+    typeWriter("headline", "Happy Valentines for the love of my life:", 50);
     setTimeout(() => {
-        typeWriter("footer-msg", "Every second with you is a gift. I Love You Baba! ", 50);
+        typeWriter("footer-msg", "My heart chose you, and it still does 💖. Love You Baba!!!! ", 50);
     }, 3000);
 
     updateTimer();
@@ -41,7 +41,7 @@ function typeWriter(id, text, speed) {
 
 document.addEventListener('mousemove', function(e) {
     const heart = document.createElement('div');
-    heart.innerHTML = '❤️'; // You can change this to any emoji
+    heart.innerHTML = '💗'; // You can change this to any emoji
     heart.className = 'cursor-heart';
     
     // Position the heart at the mouse coordinates
@@ -64,7 +64,7 @@ document.addEventListener('mousemove', function(e) {
 function createFallingHeart() {
     const heart = document.createElement("div");
     heart.classList.add("falling-heart");
-    heart.innerHTML = "❤"; // You can use "♥" or any heart emoji
+    heart.innerHTML = "❤️"; // You can use "♥" or any heart emoji
     
     // Randomize position and speed
     heart.style.left = Math.random() * 100 + "vw";
@@ -81,7 +81,7 @@ function createFallingHeart() {
 }
 
 // Start the rain! (Creates a heart every 300ms)
-setInterval(createFallingHeart, 300);
+setInterval(createFallingHeart, 100);
 
 function startPeeking() {
     const boy = document.getElementById('peeping-boy');
