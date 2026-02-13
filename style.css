@@ -127,7 +127,7 @@ body::before {
     z-index: 10000;
     width: 90px; /* Adjust size to fit your character */
     right: -90px; /* Hidden off-screen by default */
-    bottom: -2%;   /* Position him 30% up from the bottom */
+    bottom: -10%;   /* Position him 30% up from the bottom */
     transform: rotate(0deg); /* Rotates him to face the center */
     transition: right 0.6s ease-in-out;
     pointer-events: none;
@@ -138,3 +138,4 @@ body::before {
 #peeping-boy.peek {
     right: -10px !important;
 }
+
