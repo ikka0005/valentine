@@ -1,0 +1,140 @@
+body {
+    /* Replace 'background.jpg' with the actual name of your image file */
+    background-image: url('video.MP4'); 
+    
+    /* This makes the image cover the entire screen without stretching */
+    background-size: cover; 
+    
+    /* This centers the image */
+    background-position: center; 
+    
+    /* This stops the image from repeating like a tile pattern */
+    background-repeat: no-repeat; 
+    
+    /* Keep these original styles */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* This creates a semi-transparent white layer over the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Change the 0.5 to make it more or less transparent (0.1 to 0.9) */
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: -1; /* Places it behind your content but in front of the image */
+}
+
+#heart-btn {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.cursor-heart {
+    position: absolute;
+    color: #e91e63; /* The pink color */
+    font-size: 20px;
+    pointer-events: none; /* Makes sure you can still click things through the hearts */
+    user-select: none;
+    animation: fallAndFade 2s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes fallAndFade {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#heart-btn:hover {
+    transform: scale(3.3);
+}
+
+.heart-shape {
+    background-color: #e91e63;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    position: relative;
+    margin: 0 auto 10px;
+}
+
+.heart-shape:before, .heart-shape:after {
+    content: "";
+    background-color: #e91e63;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.heart-shape:before { top: -25px; left: 0; }
+.heart-shape:after { left: 25px; top: 0; }
+
+.hidden { display: none; }
+
+#content {
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+}
+
+.falling-heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4d6d; /* You can change the heart color here */
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+#clock {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ad1457;
+    margin: 20px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#peeping-boy {
+    position: fixed;
+    z-index: 10000;
+    width: 90px; /* Adjust size to fit your character */
+    right: -90px; /* Hidden off-screen by default */
+    bottom: -2%;   /* Position him 30% up from the bottom */
+    transform: rotate(0deg); /* Rotates him to face the center */
+    transition: right 0.6s ease-in-out;
+    pointer-events: none;
+    display: block !important;
+}
+
+/* This class pulls him into view */
+#peeping-boy.peek {
+    right: -10px !important;
+}
