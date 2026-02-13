@@ -37,7 +37,7 @@ body::before {
 #heart-btn {
     cursor: pointer;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
 }
 
 .cursor-heart {
